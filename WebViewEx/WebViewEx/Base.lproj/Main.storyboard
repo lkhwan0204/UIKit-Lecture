@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebViewEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-3e-TVY">
+                                <rect key="frame" x="16" y="59" width="271" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmr-fi-Tu4">
+                                <rect key="frame" x="331" y="59" width="46" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go"/>
+                                <connections>
+                                    <action selector="btnGotoUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Idi-Su-sHf"/>
+                                    <action selector="btnGotoUrlWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Krn-5b-ZvT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-9n-zES">
+                                <rect key="frame" x="9" y="101" width="61" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Site1"/>
+                                <connections>
+                                    <action selector="btnGoSite1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jY9-Hy-2wQ"/>
+                                    <action selector="btnGoSite1WithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0zx-Ne-AX4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCD-eI-yNU">
+                                <rect key="frame" x="100" y="102" width="63" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Site2"/>
+                                <connections>
+                                    <action selector="btnGoSite2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qAo-AD-4i2"/>
+                                    <action selector="btnGoSite2WithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HX5-Pc-Zxx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzg-FC-ZjQ">
+                                <rect key="frame" x="204" y="102" width="71" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="HTML"/>
+                                <connections>
+                                    <action selector="btnLoadHtmlStringWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdE-wN-Mrk"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-uS-Txk">
+                                <rect key="frame" x="16" y="145" width="361" height="621"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpM-46-LWH">
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ndr-V2-cIP"/>
+                                    <barButtonItem title="Item" image="xmark" catalog="system" id="oD6-00-c1H">
+                                        <connections>
+                                            <action selector="btnStopWithSender:" destination="BYZ-38-t0r" id="ynJ-0p-JbK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="t8z-a6-xL2"/>
+                                    <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="VsO-Cr-UDo">
+                                        <connections>
+                                            <action selector="btnReloadWithSender:" destination="BYZ-38-t0r" id="0SZ-nZ-W8R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Vk-oz-VGY"/>
+                                    <barButtonItem title="Remote" image="backward.fill" catalog="system" id="QWh-A9-rJm">
+                                        <connections>
+                                            <action selector="btnGoBackWithSender:" destination="BYZ-38-t0r" id="wle-Ea-F5V"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sVw-v8-Uf3"/>
+                                    <barButtonItem title="Item" image="forward.fill" catalog="system" id="IU2-g6-dMe">
+                                        <connections>
+                                            <action selector="btnGoForward:" destination="BYZ-38-t0r" id="YJB-8G-2KL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SFQ-aE-Zf8"/>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Nxi-SE-2aK">
+                                <rect key="frame" x="186" y="416" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BU8-Tk-dJU">
+                                <rect key="frame" x="326" y="101" width="51" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="File"/>
+                                <connections>
+                                    <action selector="btnLoadHtmlFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7oO-tl-aee"/>
+                                    <action selector="btnLoadHtmlFileWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLY-ne-dgF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="myActivityIndicator" destination="Nxi-SE-2aK" id="UU5-56-HSf"/>
+                        <outlet property="myWebView" destination="dS6-uS-Txk" id="kKT-A5-PVx"/>
+                        <outlet property="txtUrl" destination="eaF-3e-TVY" id="lLz-UA-BEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="110" height="128"/>
+        <image name="backward.fill" catalog="system" width="128" height="76"/>
+        <image name="forward.fill" catalog="system" width="128" height="76"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

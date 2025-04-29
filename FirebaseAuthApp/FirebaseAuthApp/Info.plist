@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Firebase 설정 정보는 GoogleService-Info.plist 파일에 이미 포함되어 있음 -->
+
+    <!-- (선택 사항) FirebaseAppDelegateProxyEnabled
+         기본값은 true이며, 앱에서 직접 딥링크 등 처리를 원할 경우 false로 설정할 수 있음 -->
+    <key>FirebaseAppDelegateProxyEnabled</key>
+    <false/>
+
+    <!-- (선택 사항) Google Sign-In을 사용하는 경우 URL Types 설정 -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <!-- GoogleService-Info.plist 파일의
+                    REVERSED_CLIENT_ID 값을 복사하여 사용 -->
+                <string>com.googleusercontent.apps.1234567890-abcdefg</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- 다른 info.plist 기본 설정 항목들... -->
+</dict>
+</plist>

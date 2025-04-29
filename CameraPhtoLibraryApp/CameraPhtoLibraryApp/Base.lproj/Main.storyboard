@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraPhtoLibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zmg-wo-ahq">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-sK-iLd">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="679"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" id="v4c-VM-Izg">
+                                        <rect key="frame" x="0.0" y="690.33333333333337" width="361" height="34.333333333333371"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyX-Hu-Ici">
+                                                <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="X7U-tL-qDX"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="사진 촬영"/>
+                                                <connections>
+                                                    <action selector="btnCaptureImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZWR-7E-WJF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-US-XK9">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="40"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="비디오 촬영"/>
+                                                <connections>
+                                                    <action selector="btnRecordVideoFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XZ7-Po-KJv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="err-ez-WTW"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RiH-VI-aTQ">
+                                        <rect key="frame" x="0.0" y="719" width="361" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t6-9h-Cei">
+                                                <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="3kc-3s-QAZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="사진 불러오기"/>
+                                                <connections>
+                                                    <action selector="btnLoadImageFromLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OH5-F6-7uC"/>
+                                                    <action selector="btnLoadImageFromLibray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eA7-pM-iCz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNP-uD-0yo">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="40"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="비디오 불러오기"/>
+                                                <connections>
+                                                    <action selector="btnLoadVideoFromLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xKz-s1-KmH"/>
+                                                    <action selector="btnLoadVideoFromLibray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="THE-Fi-oAk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="750" id="BpI-aX-H7z"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zmg-wo-ahq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6A7-G8-VDc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmg-wo-ahq" secondAttribute="trailing" constant="16" id="ATQ-3Q-efT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zmg-wo-ahq" secondAttribute="bottom" id="cYH-cV-br1"/>
+                            <constraint firstItem="zmg-wo-ahq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yJe-Fy-gAA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="Dos-sK-iLd" id="Gwl-C4-XqY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.76335877862595414" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
