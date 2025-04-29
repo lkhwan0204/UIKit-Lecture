@@ -4,7 +4,7 @@ struct ItemPickerPopup: View {
     @Binding var selectedItem: String?
     @Binding var showPopup: Bool
 
-    let items = ["연필", "컵", "책"]
+    let items = ["신발", "자동차", "머그컵"]
 
     var body: some View {
         VStack(spacing: 20) {

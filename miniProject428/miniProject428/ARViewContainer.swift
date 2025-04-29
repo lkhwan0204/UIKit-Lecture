@@ -39,26 +39,37 @@ struct ARViewContainer: UIViewRepresentable {
         @objc func handleTap(_ gesture: UITapGestureRecognizer) {
             guard let sceneView = gesture.view as? ARSCNView else { return }
             let location = gesture.location(in: sceneView)
-            let hitTestResults = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
-            
-            if let result = hitTestResults.first, let item = selectedItem {
+
+            guard let query = sceneView.raycastQuery(from: location, allowing: .existingPlaneGeometry, alignment: .horizontal),
+                  let result = sceneView.session.raycast(query).first,
+                  let item = selectedItem else { return }
+
+            let position = SCNVector3(
+                result.worldTransform.columns.3.x,
+                result.worldTransform.columns.3.y + 0.05,
+                result.worldTransform.columns.3.z
+            )
+
+            if item == "신발" || item == "자동차" || item == "머그컵" {
+                guard let scene = SCNScene(named: "\(item).usdz") else { return }
+                let objectNode = SCNNode()
+                for child in scene.rootNode.childNodes {
+                    objectNode.addChildNode(child)
+                }
+                objectNode.position = position
+                objectNode.scale = SCNVector3(0.01, 0.01, 0.01)
+                objectNode.pivot = SCNMatrix4Identity
+                sceneView.scene.rootNode.addChildNode(objectNode)
+            } else {
                 let node = createNode(for: item)
-                node.position = SCNVector3(
-                    result.worldTransform.columns.3.x,
-                    result.worldTransform.columns.3.y + 0.05,
-                    result.worldTransform.columns.3.z
-                )
+                node.position = position
                 sceneView.scene.rootNode.addChildNode(node)
             }
         }
-        
+
         func createNode(for item: String) -> SCNNode {
             switch item {
-            case "Pencil":
-                let geometry = SCNCylinder(radius: 0.01, height: 0.2)
-                geometry.firstMaterial?.diffuse.contents = UIColor.yellow
-                return SCNNode(geometry: geometry)
-            case "Mug":
+            case "Cup":
                 let geometry = SCNCylinder(radius: 0.05, height: 0.07)
                 geometry.firstMaterial?.diffuse.contents = UIColor.white
                 return SCNNode(geometry: geometry)

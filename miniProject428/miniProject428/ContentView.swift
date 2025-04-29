@@ -71,25 +71,17 @@ struct ContentView: View {
     // Consider moving this function to ARViewContainer.swift later
     func createNode(for item: String) -> SCNNode {
         switch item {
-        case "Pencil":
-            let geometry = SCNCylinder(radius: 0.01, height: 0.2)
-            geometry.firstMaterial?.diffuse.contents = UIColor.yellow
+        case "sneaker":
+            let geometry = SCNBox(width: 0.2, height: 0.1, length: 0.3, chamferRadius: 0.02)
+            geometry.firstMaterial?.diffuse.contents = UIColor.red
             return SCNNode(geometry: geometry)
-        case "Mug":
-            let geometry = SCNCylinder(radius: 0.05, height: 0.07)
+        case "car":
+            let geometry = SCNBox(width: 0.4, height: 0.1, length: 0.2, chamferRadius: 0.05)
+            geometry.firstMaterial?.diffuse.contents = UIColor.blue
+            return SCNNode(geometry: geometry)
+        case "cup_3":
+            let geometry = SCNCylinder(radius: 0.05, height: 0.1)
             geometry.firstMaterial?.diffuse.contents = UIColor.white
-            return SCNNode(geometry: geometry)
-        case "Book":
-            let geometry = SCNBox(width: 0.12, height: 0.02, length: 0.18, chamferRadius: 0)
-            geometry.firstMaterial?.diffuse.contents = UIColor.brown
-            return SCNNode(geometry: geometry)
-        case "Chair":
-            let geometry = SCNBox(width: 0.1, height: 0.15, length: 0.1, chamferRadius: 0)
-            geometry.firstMaterial?.diffuse.contents = UIColor.darkGray
-            return SCNNode(geometry: geometry)
-        case "Laptop":
-            let geometry = SCNBox(width: 0.2, height: 0.01, length: 0.13, chamferRadius: 0)
-            geometry.firstMaterial?.diffuse.contents = UIColor.gray
             return SCNNode(geometry: geometry)
         default:
             return SCNNode()
